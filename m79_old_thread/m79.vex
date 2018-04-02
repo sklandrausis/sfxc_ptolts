@@ -1,0 +1,2497 @@
+VEX_rev = 1.5;
+*    SCHED vers: Release 11.4.  March 14, 2015
+*    VEX/SCHED:  1.5.87
+*    Other versions: Sched:  11.4  Plot: 1.06  JPL-ephem: 1.01
+*------------------------------------------------------------------------------
+$GLOBAL;
+     ref $EXPER = m79;
+*                                                      +------------+
+*                         PI revision number:          |    1.0000  |
+*                                                      +------------+
+*    mode:       Observations of a methanol source at 6.7GHz (16 Mb/s)
+*------------------------------------------------------------------------------
+$EXPER;
+*
+def m79;
+     exper_name = m79;
+     exper_description = "RT16 observations of methanol sources";
+     PI_name = "K. Berzins";
+     PI_email = karlis.berzins@venta.lv;
+*    address:   VIRAC
+*               A Street
+*               Irbene
+*               Latvia
+*    phone:     +371
+*    during obs:+371
+*    fax:        
+*    notes:     VIRAC_Internal_Observation
+*
+*    year, doy: 2017, 288
+*    date     : Sun 15 Oct 2017
+*    MJD      : 58041
+     exper_nominal_start=2017y288d08h45m00s;
+     exper_nominal_stop=2017y288d14h19m50s;
+*
+     target_correlator = JIVE;
+*
+*    integr_time    :     2.000 s
+*    number_channels:  1024
+*    number_antenna :  6
+*    cross_polarize : No
+*    weight_func    : UNIFORM
+*    distrib_medium : DAT
+*    distrib_format : FITS
+*    source_pos_cat : FROM SCHEDULE
+*    distribute_to  : 
+*                     VIRAC
+*                     A Street
+*                     Latvia
+*    corr_notes : 
+*               Place special requirements here (cornote2-4 available)
+*
+enddef;
+*------------------------------------------------------------------------------
+$MODE;
+*
+def eo111;
+     ref $PROCEDURES = Mode_01;
+     ref $FREQ = 6668.00MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+     
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@S269;
+     ref $PROCEDURES = Mode_02;
+     ref $FREQ = 6667.48MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     *ref $TRACKS = MARK5B.4Ch2bit1to1:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@S255;
+     ref $PROCEDURES = Mode_03;
+     ref $FREQ = 6667.74MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+     *ref $TRACKS = MARK5B.4Ch2bit1to1:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@S252;
+     ref $PROCEDURES = Mode_04;
+     ref $FREQ = 6667.62MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     *ref $TRACKS = MARK5B.4Ch2bit1to1:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+     ref $ROLL = NoRoll:Ir:Iq;
+*     ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@AFGL6366;
+     ref $PROCEDURES = Mode_05;
+     ref $FREQ = 6667.66MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     *ref $TRACKS = MARK5B.4Ch2bit1to1:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@S231;
+     ref $PROCEDURES = Mode_06;
+     ref $FREQ = 6668.20MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     *ref $TRACKS = MARK5B.4Ch2bit1to1:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@AFGL5142;
+     ref $PROCEDURES = Mode_07;
+     ref $FREQ = 6667.87MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+    * ref $TRACKS = MARK5B.4Ch2bit1to1:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G183P35;
+     ref $PROCEDURES = Mode_08;
+     ref $FREQ = 6667.98MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G188P79;
+     ref $PROCEDURES = Mode_09;
+     ref $FREQ = 6667.99MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@L1206;
+     ref $PROCEDURES = Mode_10;
+     ref $FREQ = 6668.05MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@L1287;
+     ref $PROCEDURES = Mode_11;
+     ref $FREQ = 6668.38MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@NGC281;
+     ref $PROCEDURES = Mode_12;
+     ref $FREQ = 6668.45MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@W75S;
+     ref $PROCEDURES = Mode_13;
+     ref $FREQ = 6667.81MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@DR20;
+     ref $PROCEDURES = Mode_14;
+     ref $FREQ = 6667.70MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@DR21;
+     ref $PROCEDURES = Mode_15;
+     ref $FREQ = 6667.67MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@NGC7538;
+     ref $PROCEDURES = Mode_16;
+     ref $FREQ = 6669.04MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@CEPA;
+     ref $PROCEDURES = Mode_17;
+     ref $FREQ = 6667.88MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@W3OH;
+     ref $PROCEDURES = Mode_18;
+     ref $FREQ = 6668.87MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G136P84;
+     ref $PROCEDURES = Mode_19;
+     ref $FREQ = 6668.89MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@V645;
+     ref $PROCEDURES = Mode_20;
+     ref $FREQ = 6668.61MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G111P26;
+     ref $PROCEDURES = Mode_21;
+     ref $FREQ = 6668.63MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G90P92;
+     ref $PROCEDURES = Mode_22;
+     ref $FREQ = 6669.25MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G85P41;
+     ref $PROCEDURES = Mode_23;
+     ref $FREQ = 6668.27MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G78P122;
+     ref $PROCEDURES = Mode_24;
+     ref $FREQ = 6667.78MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G75P78;
+     ref $PROCEDURES = Mode_25;
+     ref $FREQ = 6667.63MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G73P06;
+     ref $PROCEDURES = Mode_26;
+     ref $FREQ = 6667.65MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G60P57;
+     ref $PROCEDURES = Mode_27;
+     ref $FREQ = 6667.38MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G59P783;
+     ref $PROCEDURES = Mode_28;
+     ref $FREQ = 6666.89MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G50P03;
+     ref $PROCEDURES = Mode_29;
+     ref $FREQ = 6667.52MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@W51;
+     ref $PROCEDURES = Mode_30;
+     ref $FREQ = 6666.12MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@W49N;
+     ref $PROCEDURES = Mode_31;
+     ref $FREQ = 6667.06MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G49P04;
+     ref $PROCEDURES = Mode_32;
+     ref $FREQ = 6666.57MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G49P57;
+     ref $PROCEDURES = Mode_33;
+     ref $FREQ = 6666.07MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+      ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G37P479;
+     ref $PROCEDURES = Mode_34;
+     ref $FREQ = 6666.10MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G35P20;
+     ref $PROCEDURES = Mode_35;
+     ref $FREQ = 6666.34MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq;
+      ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G33P64;
+     ref $PROCEDURES = Mode_36;
+     ref $FREQ = 6665.96MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G32P745;
+     ref $PROCEDURES = Mode_37;
+     ref $FREQ = 6666.48MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G30P99;
+     ref $PROCEDURES = Mode_38;
+     ref $FREQ = 6665.62MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*
+def Doppler@G25P65;
+     ref $PROCEDURES = Mode_39;
+     ref $FREQ = 6666.33MHz4x2MHz:Ir:Iq;
+     ref $IF = LO@6100MHzDPolNoTone:Ir:Iq;
+     ref $BBC = 4BBCs:Ir:Iq;
+     ref $TRACKS = VDIFF.4Ch2bit1to1:Ir:Iq; 
+     ref $THREADS = 08Threads01:Ir:Iq;
+*    ref $HEAD_POS = DiskVoid <= obsolete definition
+     ref $ROLL = NoRoll:Ir:Iq;
+*    ref $PASS_ORDER = DiskVoid <= obsolete definition
+     ref $PHASE_CAL_DETECT = NoDetect:Ir:Iq;
+enddef;
+*------------------------------------------------------------------------------
+$STATION;
+*
+def Ir;
+     ref $SITE = IRBENE;
+     ref $ANTENNA = IRBENE;
+     ref $DAS = FILA10G;
+enddef;
+*
+def Iq;
+     ref $SITE = IRBENEQ;
+     ref $ANTENNA = IRBENEQ;
+     ref $DAS = FILA10G;
+enddef;
+*------------------------------------------------------------------------------
+$PROCEDURES;
+*
+def Mode_01;
+     procedure_name_prefix =  "01";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_02;
+     procedure_name_prefix =  "02";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_03;
+     procedure_name_prefix =  "03";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_04;
+     procedure_name_prefix =  "04";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_05;
+     procedure_name_prefix =  "05";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_06;
+     procedure_name_prefix =  "06";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_07;
+     procedure_name_prefix =  "07";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_08;
+     procedure_name_prefix =  "08";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_09;
+     procedure_name_prefix =  "09";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_10;
+     procedure_name_prefix =  "10";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_11;
+     procedure_name_prefix =  "11";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_12;
+     procedure_name_prefix =  "12";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_13;
+     procedure_name_prefix =  "13";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_14;
+     procedure_name_prefix =  "14";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_15;
+     procedure_name_prefix =  "15";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_16;
+     procedure_name_prefix =  "16";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_17;
+     procedure_name_prefix =  "17";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_18;
+     procedure_name_prefix =  "18";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_19;
+     procedure_name_prefix =  "19";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_20;
+     procedure_name_prefix =  "20";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_21;
+     procedure_name_prefix =  "21";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_22;
+     procedure_name_prefix =  "22";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_23;
+     procedure_name_prefix =  "23";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_24;
+     procedure_name_prefix =  "24";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_25;
+     procedure_name_prefix =  "25";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_26;
+     procedure_name_prefix =  "26";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_27;
+     procedure_name_prefix =  "27";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_28;
+     procedure_name_prefix =  "28";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_29;
+     procedure_name_prefix =  "29";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_30;
+     procedure_name_prefix =  "30";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_31;
+     procedure_name_prefix =  "31";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_32;
+     procedure_name_prefix =  "32";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_33;
+     procedure_name_prefix =  "33";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_34;
+     procedure_name_prefix =  "34";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_35;
+     procedure_name_prefix =  "35";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_36;
+     procedure_name_prefix =  "36";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_37;
+     procedure_name_prefix =  "37";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_38;
+     procedure_name_prefix =  "38";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*
+def Mode_39;
+     procedure_name_prefix =  "39";
+     tape_change =  420 sec;
+     headstack_motion =    6 sec;
+     new_source_command =    5 sec;
+     new_tape_setup =   20 sec;
+     setup_always = on :  20 sec;
+     parity_check = off : 100 sec;
+     tape_prepass = off : 600 sec;
+     preob_cal  = on :  10 sec : preob;
+     midob_cal  = on :  15 sec : midob;
+     postob_cal = on :   0 sec : postob;
+enddef;
+*------------------------------------------------------------------------------
+$SITE;
+*
+def IRBENE;
+     site_type = fixed;
+     site_name = IRBENE;
+     site_ID = Ir;
+*    elev=   87.30 long=-021:51:17. lat= 57:33:12.3
+     site_position = 3183661.00000 m: 1276902.00000 m: 5359291.00000 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 1997y001d;
+     site_position_epoch =   50449;
+enddef;
+*
+def IRBENEQ;
+     site_type = fixed;
+     site_name = IRBENEQ;
+     site_ID = Iq;
+*    elev=   87.30 long=-021:51:17. lat= 57:33:12.3
+     site_position = 3183661.00000 m: 1276902.00000 m: 5359291.00000 m;
+     site_velocity =  0.000000   m/yr:  0.000000   m/yr:  0.000000  m/yr;
+*    First line below is VEX standard format.  Use only when readers are ready.
+*    site_position_epoch = 1997y001d;
+     site_position_epoch =   50449;
+enddef;
+*------------------------------------------------------------------------------
+$ANTENNA;
+*
+def IRBENE;
+     axis_type = az : el;
+     antenna_motion = el :1000.0 deg/min :  2 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :1000.0 deg/min :  2 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*
+def IRBENEQ;
+     axis_type = az : el;
+     antenna_motion = el :1000.0 deg/min :  2 sec;  * 1000.000 deg/sec/sec
+     antenna_motion = az :1000.0 deg/min :  2 sec;  * 1000.000 deg/sec/sec
+     axis_offset =    0.00000 m;
+enddef;
+*------------------------------------------------------------------------------
+$DAS;
+*
+def 2DBBC+NONE<;
+     record_transport_type = Mark5B;
+     electronics_rack_type = DBBC;
+     number_drives = 2;
+     headstack = 1 :            : 0 ;
+     headstack = 2 :            : 1 ;
+     tape_motion = adaptive : 0 min: 0 min: 10 sec;
+enddef;
+*
+def FILA10G;
+    record_transport_type = None;
+    electronics_rack_type = DBBC;
+enddef;
+*
+
+*------------------------------------------------------------------------------
+$SOURCE;
+*
+def AFGL6366;
+     source_name = AFGL6366;
+*    this source had calibrator code:  
+     ra = 06h08m40.6700000s; dec =  21d31'06.900000"; ref_coord_frame = J2000;
+*    ra = 06h05m40.5941210s; dec =  21d31'38.270887"; ref_coord_frame = B1950;
+*    ra = 06h09m44.3905266s; dec =  21d30'46.550254"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =       8.90 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def AFGL5142;
+     source_name = AFGL5142;
+*    this source had calibrator code:  
+     ra = 05h30m48.0150000s; dec =  33d47'54.610000"; ref_coord_frame = J2000;
+*    ra = 05h27m29.9892408s; dec =  33d45'40.158435"; ref_coord_frame = B1950;
+*    ra = 05h31m58.4084383s; dec =  33d48'28.938091"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =       1.40 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def W49N;
+     source_name = W49N;
+*    this source had calibrator code:  
+     ra = 19h10m11.0500000s; dec =  09d05'20.400000"; ref_coord_frame = J2000;
+*    ra = 19h07m47.4219769s; dec =  09d00'23.256175"; ref_coord_frame = B1950;
+*    ra = 19h11m01.2950504s; dec =  09d07'23.915196"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      13.24 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def W51;
+     source_name = W51;
+*    this source had calibrator code:  
+     ra = 19h23m43.9641700s; dec =  14d30'34.968700"; ref_coord_frame = J2000;
+*    ra = 19h21m26.2981212s; dec =  14d24'41.603169"; ref_coord_frame = B1950;
+*    ra = 19h24m32.2126468s; dec =  14d32'59.583859"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      57.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def W75N;
+     source_name = W75N;
+*    this source had calibrator code:  
+     ra = 20h38m36.4500000s; dec =  42d37'36.060000"; ref_coord_frame = J2000;
+*    ra = 20h36m50.0065330s; dec =  42d26'59.655248"; ref_coord_frame = B1950;
+*    ra = 20h39m14.5095678s; dec =  42d41'44.133255"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =       6.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def W75S;
+     source_name = W75S;
+*    this source had calibrator code:  
+     ra = 20h39m02.5000000s; dec =  42d24'59.000000"; ref_coord_frame = J2000;
+*    ra = 20h37m15.6359191s; dec =  42d14'21.141740"; ref_coord_frame = B1950;
+*    ra = 20h39m40.7079150s; dec =  42d29'07.540892"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -8.60 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def CEPA;
+     source_name = CEPA;
+*    this source had calibrator code:  
+     ra = 22h56m17.9030000s; dec =  62d01'49.650000"; ref_coord_frame = J2000;
+*    ra = 22h54m18.9623899s; dec =  61d45'47.431411"; ref_coord_frame = B1950;
+*    ra = 22h57m02.6808221s; dec =  62d07'44.412675"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -4.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def L1206;
+     source_name = L1206;
+*    this source had calibrator code:  
+     ra = 22h28m51.4070000s; dec =  64d13'41.310000"; ref_coord_frame = J2000;
+*    ra = 22h27m11.3593950s; dec =  63d58'19.042728"; ref_coord_frame = B1950;
+*    ra = 22h29m29.4319952s; dec =  64d19'24.361095"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -11.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def L1287;
+     source_name = L1287;
+*    this source had calibrator code:  
+     ra = 00h36m47.3530000s; dec =  63d29'02.160000"; ref_coord_frame = J2000;
+*    ra = 00h33m53.1436341s; dec =  63d12'32.209020"; ref_coord_frame = B1950;
+*    ra = 00h37m52.6072050s; dec =  63d34'56.062892"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -24.20 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G50P03;
+     source_name = G50P03;
+*    this source had calibrator code:  
+     ra = 19h21m15.1000000s; dec =  15d26'49.500000"; ref_coord_frame = J2000;
+*    ra = 19h18m58.5999742s; dec =  15d21'06.267089"; ref_coord_frame = B1950;
+*    ra = 19h22m02.9268803s; dec =  15d29'10.840533"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -5.20 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G59P783;
+     source_name = G59P783;
+*    this source had calibrator code:  
+     ra = 19h43m11.2500000s; dec =  23d44'03.300000"; ref_coord_frame = J2000;
+*    ra = 19h41m03.8915173s; dec =  23d36'51.379651"; ref_coord_frame = B1950;
+*    ra = 19h43m56.0427183s; dec =  23d46'57.547880"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      25.50 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G32P745;
+     source_name = G32P745;
+*    this source had calibrator code:  
+     ra = 18h51m21.8700000s; dec = -00d12'05.300000"; ref_coord_frame = J2000;
+*    ra = 18h48m47.8182650s; dec = -00d15'42.574580"; ref_coord_frame = B1950;
+*    ra = 18h52m15.6484294s; dec = -00d10'32.417471"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      36.40 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G33P64;
+     source_name = G33P64;
+*    this source had calibrator code:  
+     ra = 18h53m32.5630000s; dec =  00d31'39.180000"; ref_coord_frame = J2000;
+*    ra = 18h50m59.3384408s; dec =  00d27'52.588078"; ref_coord_frame = B1950;
+*    ra = 18h54m26.0641280s; dec =  00d33'15.537104"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      60.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G37P479;
+     source_name = G37P479;
+*    this source had calibrator code:  
+     ra = 19h00m07.1450000s; dec =  03d59'53.350000"; ref_coord_frame = J2000;
+*    ra = 18h57m37.8331872s; dec =  03d55'38.707121"; ref_coord_frame = B1950;
+*    ra = 19h00m59.3161212s; dec =  04d01'40.546520"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      54.70 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G49P04;
+     source_name = G49P04;
+*    this source had calibrator code:  
+     ra = 19h25m22.3000000s; dec =  13d47'20.100000"; ref_coord_frame = J2000;
+*    ra = 19h23m03.7554593s; dec =  13d41'20.067093"; ref_coord_frame = B1950;
+*    ra = 19h26m10.8644406s; dec =  13d49'46.838196"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      36.70 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G60P57;
+     source_name = G60P57;
+*    this source had calibrator code:  
+     ra = 19h45m52.3000000s; dec =  24d17'42.600000"; ref_coord_frame = J2000;
+*    ra = 19h43m45.4923824s; dec =  24d10'20.103209"; ref_coord_frame = B1950;
+*    ra = 19h46m36.9206336s; dec =  24d20'40.645193"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =       4.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G73P06;
+     source_name = G73P06;
+*    this source had calibrator code:  
+     ra = 20h08m10.2000000s; dec =  35d59'23.700000"; ref_coord_frame = J2000;
+*    ra = 20h06m17.5320726s; dec =  35d50'35.550674"; ref_coord_frame = B1950;
+*    ra = 20h08m50.1026116s; dec =  36d02'53.703688"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -4.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G75P78;
+     source_name = G75P78;
+*    this source had calibrator code:  
+     ra = 20h21m44.2000000s; dec =  37d26'36.700000"; ref_coord_frame = J2000;
+*    ra = 20h19m52.0919699s; dec =  37d16'59.089713"; ref_coord_frame = B1950;
+*    ra = 20h22m24.0329514s; dec =  37d30'23.939580"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -2.70 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G78P122;
+     source_name = G78P122;
+*    this source had calibrator code:  
+     ra = 20h14m26.0440000s; dec =  41d13'33.390000"; ref_coord_frame = J2000;
+*    ra = 20h12m40.9970104s; dec =  41d04'21.947666"; ref_coord_frame = B1950;
+*    ra = 20h15m03.3758002s; dec =  41d17'12.213974"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -7.75 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G85P41;
+     source_name = G85P41;
+*    this source had calibrator code:  
+     ra = 20h54m13.7000000s; dec =  44d54'06.800000"; ref_coord_frame = J2000;
+*    ra = 20h52m28.1720917s; dec =  44d42'39.151193"; ref_coord_frame = B1950;
+*    ra = 20h54m51.6227508s; dec =  44d58'32.522717"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -28.50 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G90P92;
+     source_name = G90P92;
+*    this source had calibrator code:  
+     ra = 21h09m12.6000000s; dec =  50d01'02.900000"; ref_coord_frame = J2000;
+*    ra = 21h07m32.8482616s; dec =  49d48'48.990887"; ref_coord_frame = B1950;
+*    ra = 21h09m48.7624474s; dec =  50d05'44.662045"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -70.40 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G111P26;
+     source_name = G111P26;
+*    this source had calibrator code:  
+     ra = 23h16m10.0000000s; dec =  59d55'31.300000"; ref_coord_frame = J2000;
+*    ra = 23h13m58.5665141s; dec =  59d39'08.620902"; ref_coord_frame = B1950;
+*    ra = 23h16m59.1598548s; dec =  60d01'31.429825"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -38.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G136P84;
+     source_name = G136P84;
+*    this source had calibrator code:  
+     ra = 02h49m29.8000000s; dec =  60d47'29.500000"; ref_coord_frame = J2000;
+*    ra = 02h45m36.6085802s; dec =  60d35'03.704363"; ref_coord_frame = B1950;
+*    ra = 02h50m55.2564533s; dec =  60d51'42.619500"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -44.90 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G183P35;
+     source_name = G183P35;
+*    this source had calibrator code:  
+     ra = 05h51m11.1000000s; dec =  25d46'16.500000"; ref_coord_frame = J2000;
+*    ra = 05h48m05.1459093s; dec =  25d45'31.203447"; ref_coord_frame = B1950;
+*    ra = 05h52m17.0282888s; dec =  25d46'21.798419"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -4.90 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G188P79;
+     source_name = G188P79;
+*    this source had calibrator code:  
+     ra = 06h09m06.9000000s; dec =  21d50'41.700000"; ref_coord_frame = J2000;
+*    ra = 06h06m06.3849856s; dec =  21d51'14.965599"; ref_coord_frame = B1950;
+*    ra = 06h10m10.7725628s; dec =  21d50'20.563927"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -5.54 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def DR20;
+     source_name = DR20;
+*    this source had calibrator code:  
+     ra = 20h37m00.0960000s; dec =  41d34'55.700000"; ref_coord_frame = J2000;
+*    ra = 20h35m12.2134362s; dec =  41d24'24.771480"; ref_coord_frame = B1950;
+*    ra = 20h37m38.6304683s; dec =  41d39'01.771704"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -4.06 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def DR21;
+     source_name = DR21;
+*    this source had calibrator code:  
+     ra = 20h39m01.0520000s; dec =  42d22'49.180000"; ref_coord_frame = J2000;
+*    ra = 20h37m14.1328071s; dec =  42d12'11.404568"; ref_coord_frame = B1950;
+*    ra = 20h39m39.2784852s; dec =  42d26'57.688047"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      -2.70 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def S231;
+     source_name = S231;
+*    this source had calibrator code:  
+     ra = 05h39m13.0590000s; dec =  35d45'51.290000"; ref_coord_frame = J2000;
+*    ra = 05h35m51.4546973s; dec =  35d44'13.261223"; ref_coord_frame = B1950;
+*    ra = 05h40m24.6619318s; dec =  35d46'11.916684"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -13.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def S255;
+     source_name = S255;
+*    this source had calibrator code:  
+     ra = 06h12m54.0200000s; dec =  17d59'23.320000"; ref_coord_frame = J2000;
+*    ra = 06h09m58.6020587s; dec =  18d00'13.302521"; ref_coord_frame = B1950;
+*    ra = 06h13m56.0678113s; dec =  17d58'57.666369"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =       4.50 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def S252A;
+     source_name = S252A;
+*    this source had calibrator code:  
+     ra = 06h08m32.4000000s; dec =  20d39'25.300000"; ref_coord_frame = J2000;
+*    ra = 06h05m33.4771729s; dec =  20d39'56.109575"; ref_coord_frame = B1950;
+*    ra = 06h09m35.7142428s; dec =  20d39'05.456962"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =       5.40 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def S252;
+     source_name = S252;
+*    this source had calibrator code:  
+     ra = 06h08m53.3440000s; dec =  21d38'29.160000"; ref_coord_frame = J2000;
+*    ra = 06h05m53.1031589s; dec =  21d39'01.448084"; ref_coord_frame = B1950;
+*    ra = 06h09m57.1213097s; dec =  21d38'08.442213"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      10.80 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def S269;
+     source_name = S269;
+*    this source had calibrator code:  
+     ra = 06h14m37.0510000s; dec =  13d39'36.160000"; ref_coord_frame = J2000;
+*    ra = 06h11m47.0890454s; dec =  13d40'33.833821"; ref_coord_frame = B1950;
+*    ra = 06h15m37.1658765s; dec =  13d39'09.341476"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      15.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def NGC281;
+     source_name = NGC281;
+*    this source had calibrator code:  
+     ra = 00h52m24.1960000s; dec =  56d33'43.170000"; ref_coord_frame = J2000;
+*    ra = 00h49m28.2442427s; dec =  56d17'25.956003"; ref_coord_frame = B1950;
+*    ra = 00h53m29.2427657s; dec =  56d39'31.356527"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -29.36 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def NGC7538;
+     source_name = NGC7538;
+*    this source had calibrator code:  
+     ra = 23h13m45.3640000s; dec =  61d28'10.550000"; ref_coord_frame = J2000;
+*    ra = 23h11m36.6299289s; dec =  61d11'49.961786"; ref_coord_frame = B1950;
+*    ra = 23h14m33.7115765s; dec =  61d34'10.145258"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -56.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def W3OH;
+     source_name = W3OH;
+*    this source had calibrator code:  
+     ra = 02h27m03.8200000s; dec =  61d52'25.400000"; ref_coord_frame = J2000;
+*    ra = 02h23m16.4434754s; dec =  61d38'57.928900"; ref_coord_frame = B1950;
+*    ra = 02h28m27.5143271s; dec =  61d57'02.464693"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -44.50 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G30P99;
+     source_name = G30P99;
+*    this source had calibrator code:  
+     ra = 18h48m10.8000000s; dec = -01d45'39.300000"; ref_coord_frame = J2000;
+*    ra = 18h45m34.9685104s; dec = -01d49'02.897041"; ref_coord_frame = B1950;
+*    ra = 18h49m05.1830755s; dec = -01d44'11.671458"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      74.70 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G49P57;
+     source_name = G49P57;
+*    this source had calibrator code:  
+     ra = 19h23m53.6000000s; dec =  14d34'54.000000"; ref_coord_frame = J2000;
+*    ra = 19h21m36.0132988s; dec =  14d28'59.974854"; ref_coord_frame = B1950;
+*    ra = 19h24m41.8218430s; dec =  14d37'18.864220"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      59.30 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G35P20;
+     source_name = G35P20;
+*    this source had calibrator code:  
+     ra = 19h01m46.9000000s; dec =  01d13'07.500000"; ref_coord_frame = J2000;
+*    ra = 18h59m14.4431470s; dec =  01d08'45.942279"; ref_coord_frame = B1950;
+*    ra = 19h02m40.1765389s; dec =  01d14'56.260857"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      42.60 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def G25P65;
+     source_name = G25P65;
+*    this source had calibrator code:  
+     ra = 18h34m21.9900000s; dec = -05d59'38.600000"; ref_coord_frame = J2000;
+*    ra = 18h31m41.2363632s; dec = -06d02'02.541490"; ref_coord_frame = B1950;
+*    ra = 18h35m18.0227454s; dec = -05d58'33.107465"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =      41.90 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*
+def V645;
+     source_name = V645;
+*    this source had calibrator code:  
+     ra = 21h39m58.2550000s; dec =  50d14'20.930000"; ref_coord_frame = J2000;
+*    ra = 21h38m10.5999375s; dec =  50d00'42.521495"; ref_coord_frame = B1950;
+*    ra = 21h40m37.5112207s; dec =  50d19'30.695641"; ref_coord_frame = Date;
+*    velocity_wrt_LSR =     -42.00 km/sec; * warning, only given here for 1st channel
+*    calculations used radio definition 
+enddef;
+*------------------------------------------------------------------------------
+$FREQ;
+*
+def 6668.00MHz4x2MHz;
+* mode =  1    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.00 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.00 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.00 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.00 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.48MHz4x2MHz;
+* mode =  2    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.48 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.48 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.48 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.48 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.74MHz4x2MHz;
+* mode =  3    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.74 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.74 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.74 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.74 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.62MHz4x2MHz;
+* mode =  4    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.62 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.62 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.62 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.62 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.66MHz4x2MHz;
+* mode =  5    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.66 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.66 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.66 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.66 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.20MHz4x2MHz;
+* mode =  6    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.20 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.20 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.20 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.20 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.87MHz4x2MHz;
+* mode =  7    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.87 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.87 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.87 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.87 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.98MHz4x2MHz;
+* mode =  8    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.98 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.98 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.98 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.98 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.99MHz4x2MHz;
+* mode =  9    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.99 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.99 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.99 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.99 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.05MHz4x2MHz;
+* mode = 10    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.05 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.05 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.05 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.05 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.38MHz4x2MHz;
+* mode = 11    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.38 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.38 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.38 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.38 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.45MHz4x2MHz;
+* mode = 12    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.45 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.45 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.45 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.45 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.81MHz4x2MHz;
+* mode = 13    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.81 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.81 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.81 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.81 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.70MHz4x2MHz;
+* mode = 14    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.70 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.70 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.70 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.70 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.67MHz4x2MHz;
+* mode = 15    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.67 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.67 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.67 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.67 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6669.04MHz4x2MHz;
+* mode = 16    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6669.04 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6669.04 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6671.04 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6671.04 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.88MHz4x2MHz;
+* mode = 17    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.88 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.88 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.88 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.88 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.87MHz4x2MHz;
+* mode = 18    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.87 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.87 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.87 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.87 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.89MHz4x2MHz;
+* mode = 19    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.89 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.89 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.89 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.89 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.61MHz4x2MHz;
+* mode = 20    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.61 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.61 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.61 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.61 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.63MHz4x2MHz;
+* mode = 21    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.63 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.63 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.63 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.63 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6669.25MHz4x2MHz;
+* mode = 22    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6669.25 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6669.25 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6671.25 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6671.25 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6668.27MHz4x2MHz;
+* mode = 23    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6668.27 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6668.27 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6670.27 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6670.27 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.78MHz4x2MHz;
+* mode = 24    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.78 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.78 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.78 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.78 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.63MHz4x2MHz;
+* mode = 25    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.63 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.63 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.63 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.63 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.65MHz4x2MHz;
+* mode = 26    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.65 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.65 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.65 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.65 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.38MHz4x2MHz;
+* mode = 27    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.38 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.38 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.38 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.38 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.89MHz4x2MHz;
+* mode = 28    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.89 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.89 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.89 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.89 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.52MHz4x2MHz;
+* mode = 29    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.52 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.52 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.52 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.52 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.12MHz4x2MHz;
+* mode = 30    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.12 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.12 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.12 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.12 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6667.06MHz4x2MHz;
+* mode = 31    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6667.06 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6667.06 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6669.06 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6669.06 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.57MHz4x2MHz;
+* mode = 32    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.57 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.57 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.57 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.57 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.07MHz4x2MHz;
+* mode = 33    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.07 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.07 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.07 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.07 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.10MHz4x2MHz;
+* mode = 34    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.10 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.10 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.10 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.10 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.34MHz4x2MHz;
+* mode = 35    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.34 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.34 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.34 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.34 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6665.96MHz4x2MHz;
+* mode = 36    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6665.96 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6665.96 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6667.96 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6667.96 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.48MHz4x2MHz;
+* mode = 37    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.48 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.48 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.48 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.48 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6665.62MHz4x2MHz;
+* mode = 38    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6665.62 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6665.62 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6667.62 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6667.62 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*
+def 6666.33MHz4x2MHz;
+* mode = 39    stations =Ir:Iq
+     sample_rate =   4.000 Ms/sec;  * (2bits/sample)
+     chan_def = :  6666.33 MHz : U :   2.00 MHz : &CH01 : &BBC09 : &NoCal; *Rcp
+     chan_def = :  6666.33 MHz : U :   2.00 MHz : &CH02 : &BBC01 : &NoCal; *Lcp
+     chan_def = :  6668.33 MHz : L :   2.00 MHz : &CH03 : &BBC10 : &NoCal; *Rcp
+     chan_def = :  6668.33 MHz : L :   2.00 MHz : &CH04 : &BBC02 : &NoCal; *Lcp
+enddef;
+*------------------------------------------------------------------------------
+$IF;
+*
+def LO@6100MHzDPolNoTone;
+* mode =  1    stations =Ir:Iq
+* mode =  2    stations =Ir:Iq
+* mode =  3    stations =Ir:Iq
+* mode =  4    stations =Ir:Iq
+* mode =  5    stations =Ir:Iq
+* mode =  6    stations =Ir:Iq
+* mode =  7    stations =Ir:Iq
+* mode =  8    stations =Ir:Iq
+* mode =  9    stations =Ir:Iq
+* mode = 10    stations =Ir:Iq
+* mode = 11    stations =Ir:Iq
+* mode = 12    stations =Ir:Iq
+* mode = 13    stations =Ir:Iq
+* mode = 14    stations =Ir:Iq
+* mode = 15    stations =Ir:Iq
+* mode = 16    stations =Ir:Iq
+* mode = 17    stations =Ir:Iq
+* mode = 18    stations =Ir:Iq
+* mode = 19    stations =Ir:Iq
+* mode = 20    stations =Ir:Iq
+* mode = 21    stations =Ir:Iq
+* mode = 22    stations =Ir:Iq
+* mode = 23    stations =Ir:Iq
+* mode = 24    stations =Ir:Iq
+* mode = 25    stations =Ir:Iq
+* mode = 26    stations =Ir:Iq
+* mode = 27    stations =Ir:Iq
+* mode = 28    stations =Ir:Iq
+* mode = 29    stations =Ir:Iq
+* mode = 30    stations =Ir:Iq
+* mode = 31    stations =Ir:Iq
+* mode = 32    stations =Ir:Iq
+* mode = 33    stations =Ir:Iq
+* mode = 34    stations =Ir:Iq
+* mode = 35    stations =Ir:Iq
+* mode = 36    stations =Ir:Iq
+* mode = 37    stations =Ir:Iq
+* mode = 38    stations =Ir:Iq
+* mode = 39    stations =Ir:Iq
+     if_def = &IF_C1 : C1 : R :  6100.00 MHz : U ; * PCall off!   0.0   0.0  NA     0 NA
+     if_def = &IF_A1 : A1 : L :  6100.00 MHz : U ; * PCall off!   0.0   0.0  NA     0 NA
+enddef;
+*------------------------------------------------------------------------------
+$BBC;
+*
+def 4BBCs;
+* mode =  1    stations =Ir:Iq
+* mode =  2    stations =Ir:Iq
+* mode =  3    stations =Ir:Iq
+* mode =  4    stations =Ir:Iq
+* mode =  5    stations =Ir:Iq
+* mode =  6    stations =Ir:Iq
+* mode =  7    stations =Ir:Iq
+* mode =  8    stations =Ir:Iq
+* mode =  9    stations =Ir:Iq
+* mode = 10    stations =Ir:Iq
+* mode = 11    stations =Ir:Iq
+* mode = 12    stations =Ir:Iq
+* mode = 13    stations =Ir:Iq
+* mode = 14    stations =Ir:Iq
+* mode = 15    stations =Ir:Iq
+* mode = 16    stations =Ir:Iq
+* mode = 17    stations =Ir:Iq
+* mode = 18    stations =Ir:Iq
+* mode = 19    stations =Ir:Iq
+* mode = 20    stations =Ir:Iq
+* mode = 21    stations =Ir:Iq
+* mode = 22    stations =Ir:Iq
+* mode = 23    stations =Ir:Iq
+* mode = 24    stations =Ir:Iq
+* mode = 25    stations =Ir:Iq
+* mode = 26    stations =Ir:Iq
+* mode = 27    stations =Ir:Iq
+* mode = 28    stations =Ir:Iq
+* mode = 29    stations =Ir:Iq
+* mode = 30    stations =Ir:Iq
+* mode = 31    stations =Ir:Iq
+* mode = 32    stations =Ir:Iq
+* mode = 33    stations =Ir:Iq
+* mode = 34    stations =Ir:Iq
+* mode = 35    stations =Ir:Iq
+* mode = 36    stations =Ir:Iq
+* mode = 37    stations =Ir:Iq
+* mode = 38    stations =Ir:Iq
+* mode = 39    stations =Ir:Iq
+     BBC_assign = &BBC09 :  9 : &IF_C1;
+     BBC_assign = &BBC01 :  1 : &IF_A1;
+     BBC_assign = &BBC10 : 10 : &IF_C1;
+     BBC_assign = &BBC02 :  2 : &IF_A1;
+enddef;
+*------------------------------------------------------------------------------
+$PHASE_CAL_DETECT;
+*
+def NoDetect;
+* mode =  1    stations =Ir:Iq
+* mode =  2    stations =Ir:Iq
+* mode =  3    stations =Ir:Iq
+* mode =  4    stations =Ir:Iq
+* mode =  5    stations =Ir:Iq
+* mode =  6    stations =Ir:Iq
+* mode =  7    stations =Ir:Iq
+* mode =  8    stations =Ir:Iq
+* mode =  9    stations =Ir:Iq
+* mode = 10    stations =Ir:Iq
+* mode = 11    stations =Ir:Iq
+* mode = 12    stations =Ir:Iq
+* mode = 13    stations =Ir:Iq
+* mode = 14    stations =Ir:Iq
+* mode = 15    stations =Ir:Iq
+* mode = 16    stations =Ir:Iq
+* mode = 17    stations =Ir:Iq
+* mode = 18    stations =Ir:Iq
+* mode = 19    stations =Ir:Iq
+* mode = 20    stations =Ir:Iq
+* mode = 21    stations =Ir:Iq
+* mode = 22    stations =Ir:Iq
+* mode = 23    stations =Ir:Iq
+* mode = 24    stations =Ir:Iq
+* mode = 25    stations =Ir:Iq
+* mode = 26    stations =Ir:Iq
+* mode = 27    stations =Ir:Iq
+* mode = 28    stations =Ir:Iq
+* mode = 29    stations =Ir:Iq
+* mode = 30    stations =Ir:Iq
+* mode = 31    stations =Ir:Iq
+* mode = 32    stations =Ir:Iq
+* mode = 33    stations =Ir:Iq
+* mode = 34    stations =Ir:Iq
+* mode = 35    stations =Ir:Iq
+* mode = 36    stations =Ir:Iq
+* mode = 37    stations =Ir:Iq
+* mode = 38    stations =Ir:Iq
+* mode = 39    stations =Ir:Iq
+     phase_cal_detect = &NoCal;
+enddef;
+*------------------------------------------------------------------------------
+$TRACKS;
+*
+def VDIFF.4Ch2bit1to1;
+* mode =  1    stations =Ir:Iq
+* mode =  2    stations =Ir:Iq
+* mode =  3    stations =Ir:Iq
+* mode =  4    stations =Ir:Iq
+* mode =  5    stations =Ir:Iq
+* mode =  6    stations =Ir:Iq
+* mode =  7    stations =Ir:Iq
+* mode =  8    stations =Ir:Iq
+* mode =  9    stations =Ir:Iq
+* mode = 10    stations =Ir:Iq
+* mode = 11    stations =Ir:Iq
+* mode = 12    stations =Ir:Iq
+* mode = 13    stations =Ir:Iq
+* mode = 14    stations =Ir:Iq
+* mode = 15    stations =Ir:Iq
+* mode = 16    stations =Ir:Iq
+* mode = 17    stations =Ir:Iq
+* mode = 18    stations =Ir:Iq
+* mode = 19    stations =Ir:Iq
+* mode = 20    stations =Ir:Iq
+* mode = 21    stations =Ir:Iq
+* mode = 22    stations =Ir:Iq
+* mode = 23    stations =Ir:Iq
+* mode = 24    stations =Ir:Iq
+* mode = 25    stations =Ir:Iq
+* mode = 26    stations =Ir:Iq
+* mode = 27    stations =Ir:Iq
+* mode = 28    stations =Ir:Iq
+* mode = 29    stations =Ir:Iq
+* mode = 30    stations =Ir:Iq
+* mode = 31    stations =Ir:Iq
+* mode = 32    stations =Ir:Iq
+* mode = 33    stations =Ir:Iq
+* mode = 34    stations =Ir:Iq
+* mode = 35    stations =Ir:Iq
+* mode = 36    stations =Ir:Iq
+* mode = 37    stations =Ir:Iq
+* mode = 38    stations =Ir:Iq
+* mode = 39    stations =Ir:Iq
+*    firmware_type = DBBC_DDC;
+*    format = MARK5B, and fan-out = 1
+*    mode requires   4.00Mb/s/tr; stations using disks
+     track_frame_format = VDIF5032;
+     fanout_def =   : &CH01 : sign : 1:  4;
+     fanout_def =   : &CH01 :  mag : 1:  5;
+     fanout_def =   : &CH02 : sign : 1:  2;
+     fanout_def =   : &CH02 :  mag : 1:  3;
+     fanout_def =   : &CH03 : sign : 1:  8;
+     fanout_def =   : &CH03 :  mag : 1:  9;
+     fanout_def =   : &CH04 : sign : 1:  6;
+     fanout_def =   : &CH04 :  mag : 1:  7;
+enddef;
+*-----------------------------------------------------------------------------
+$THREADS;
+*
+def 08Threads01;
+*	Stations = Ir:Iq
+    format = VDIF : : 128;
+    thread = 0 : 1 : 1 : 128 : 4 : 2 : : : 8000;
+    channel =  &CH01 : 0:  0;
+    channel =  &CH02 : 0:  1;
+    channel =  &CH03 : 0:  2;
+    channel =  &CH04 : 0:  3;
+
+enddef;
+*-------------------------------------------------------------------------------
+
+$HEAD_POS;
+def DiskVoid;
+* mode =  1    stations =Ir:Iq
+* mode =  2    stations =Ir:Iq
+* mode =  3    stations =Ir:Iq
+* mode =  4    stations =Ir:Iq
+* mode =  5    stations =Ir:Iq
+* mode =  6    stations =Ir:Iq
+* mode =  7    stations =Ir:Iq
+* mode =  8    stations =Ir:Iq
+* mode =  9    stations =Ir:Iq
+* mode = 10    stations =Ir:Iq
+* mode = 11    stations =Ir:Iq
+* mode = 12    stations =Ir:Iq
+* mode = 13    stations =Ir:Iq
+* mode = 14    stations =Ir:Iq
+* mode = 15    stations =Ir:Iq
+* mode = 16    stations =Ir:Iq
+* mode = 17    stations =Ir:Iq
+* mode = 18    stations =Ir:Iq
+* mode = 19    stations =Ir:Iq
+* mode = 20    stations =Ir:Iq
+* mode = 21    stations =Ir:Iq
+* mode = 22    stations =Ir:Iq
+* mode = 23    stations =Ir:Iq
+* mode = 24    stations =Ir:Iq
+* mode = 25    stations =Ir:Iq
+* mode = 26    stations =Ir:Iq
+* mode = 27    stations =Ir:Iq
+* mode = 28    stations =Ir:Iq
+* mode = 29    stations =Ir:Iq
+* mode = 30    stations =Ir:Iq
+* mode = 31    stations =Ir:Iq
+* mode = 32    stations =Ir:Iq
+* mode = 33    stations =Ir:Iq
+* mode = 34    stations =Ir:Iq
+* mode = 35    stations =Ir:Iq
+* mode = 36    stations =Ir:Iq
+* mode = 37    stations =Ir:Iq
+* mode = 38    stations =Ir:Iq
+* mode = 39    stations =Ir:Iq
+*     Head positions irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$PASS_ORDER;
+*
+def DiskVoid;
+* mode =  1    stations =Ir:Iq
+* mode =  2    stations =Ir:Iq
+* mode =  3    stations =Ir:Iq
+* mode =  4    stations =Ir:Iq
+* mode =  5    stations =Ir:Iq
+* mode =  6    stations =Ir:Iq
+* mode =  7    stations =Ir:Iq
+* mode =  8    stations =Ir:Iq
+* mode =  9    stations =Ir:Iq
+* mode = 10    stations =Ir:Iq
+* mode = 11    stations =Ir:Iq
+* mode = 12    stations =Ir:Iq
+* mode = 13    stations =Ir:Iq
+* mode = 14    stations =Ir:Iq
+* mode = 15    stations =Ir:Iq
+* mode = 16    stations =Ir:Iq
+* mode = 17    stations =Ir:Iq
+* mode = 18    stations =Ir:Iq
+* mode = 19    stations =Ir:Iq
+* mode = 20    stations =Ir:Iq
+* mode = 21    stations =Ir:Iq
+* mode = 22    stations =Ir:Iq
+* mode = 23    stations =Ir:Iq
+* mode = 24    stations =Ir:Iq
+* mode = 25    stations =Ir:Iq
+* mode = 26    stations =Ir:Iq
+* mode = 27    stations =Ir:Iq
+* mode = 28    stations =Ir:Iq
+* mode = 29    stations =Ir:Iq
+* mode = 30    stations =Ir:Iq
+* mode = 31    stations =Ir:Iq
+* mode = 32    stations =Ir:Iq
+* mode = 33    stations =Ir:Iq
+* mode = 34    stations =Ir:Iq
+* mode = 35    stations =Ir:Iq
+* mode = 36    stations =Ir:Iq
+* mode = 37    stations =Ir:Iq
+* mode = 38    stations =Ir:Iq
+* mode = 39    stations =Ir:Iq
+*     Pass orders irrelevant for Disk: empty def
+enddef;
+*------------------------------------------------------------------------------
+$ROLL;
+*
+def NoRoll;
+* mode =  1    stations =Ir:Iq
+* mode =  2    stations =Ir:Iq
+* mode =  3    stations =Ir:Iq
+* mode =  4    stations =Ir:Iq
+* mode =  5    stations =Ir:Iq
+* mode =  6    stations =Ir:Iq
+* mode =  7    stations =Ir:Iq
+* mode =  8    stations =Ir:Iq
+* mode =  9    stations =Ir:Iq
+* mode = 10    stations =Ir:Iq
+* mode = 11    stations =Ir:Iq
+* mode = 12    stations =Ir:Iq
+* mode = 13    stations =Ir:Iq
+* mode = 14    stations =Ir:Iq
+* mode = 15    stations =Ir:Iq
+* mode = 16    stations =Ir:Iq
+* mode = 17    stations =Ir:Iq
+* mode = 18    stations =Ir:Iq
+* mode = 19    stations =Ir:Iq
+* mode = 20    stations =Ir:Iq
+* mode = 21    stations =Ir:Iq
+* mode = 22    stations =Ir:Iq
+* mode = 23    stations =Ir:Iq
+* mode = 24    stations =Ir:Iq
+* mode = 25    stations =Ir:Iq
+* mode = 26    stations =Ir:Iq
+* mode = 27    stations =Ir:Iq
+* mode = 28    stations =Ir:Iq
+* mode = 29    stations =Ir:Iq
+* mode = 30    stations =Ir:Iq
+* mode = 31    stations =Ir:Iq
+* mode = 32    stations =Ir:Iq
+* mode = 33    stations =Ir:Iq
+* mode = 34    stations =Ir:Iq
+* mode = 35    stations =Ir:Iq
+* mode = 36    stations =Ir:Iq
+* mode = 37    stations =Ir:Iq
+* mode = 38    stations =Ir:Iq
+* mode = 39    stations =Ir:Iq
+*    barrel-roll set to 'roll_off', so reverse-roll by  0 (1 head)
+     roll = off;
+enddef;
+*------------------------------------------------------------------------------
+$SCHED;
+* schedule section for experiment m79     
+* RT16 observations of methanol sources                                   
+scan No0001;
+     start=2017y288d08h45m00s; mode=Doppler@S269; source=S269;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Ir:    0 sec:  420 sec:    0.000 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:    0.000 GB:   :       : 1;
+endscan;
+scan No0002;
+     start=2017y288d08h54m00s; mode=Doppler@S255; source=S255;
+     station=Ir:    0 sec:  180 sec:    1.683 GB:   :       : 1;
+     station=Iq:    0 sec:  180 sec:    1.683 GB:   :       : 1;
+endscan;
+scan No0003;
+     start=2017y288d08h59m00s; mode=Doppler@S252; source=S252;
+     station=Ir:    0 sec:  180 sec:    2.404 GB:   :       : 1;
+     station=Iq:    0 sec:  180 sec:    2.404 GB:   :       : 1;
+endscan;
+scan No0004;
+     start=2017y288d09h04m00s; mode=Doppler@S255; source=S252A;
+     station=Ir:    0 sec:  420 sec:    3.125 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:    3.125 GB:   :       : 1;
+endscan;
+scan No0005;
+     start=2017y288d09h13m00s; mode=Doppler@AFGL6366; source=AFGL6366;
+     station=Ir:    0 sec:  420 sec:    4.808 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:    4.808 GB:   :       : 1;
+endscan;
+scan No0006;
+     start=2017y288d09h22m00s; mode=Doppler@S231; source=S231;
+     station=Ir:    0 sec:  420 sec:    6.490 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:    6.490 GB:   :       : 1;
+endscan;
+scan No0007;
+     start=2017y288d09h31m00s; mode=Doppler@AFGL5142; source=AFGL5142;
+     station=Ir:    0 sec:  420 sec:    8.173 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:    8.173 GB:   :       : 1;
+endscan;
+scan No0008;
+     start=2017y288d09h40m00s; mode=Doppler@G183P35; source=G183P35;
+     station=Ir:    0 sec:  420 sec:    9.856 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:    9.856 GB:   :       : 1;
+endscan;
+scan No0009;
+     start=2017y288d09h49m00s; mode=Doppler@G188P79; source=G188P79;
+     station=Ir:    0 sec:  420 sec:   11.538 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   11.538 GB:   :       : 1;
+endscan;
+scan No0010;
+     start=2017y288d09h58m00s; mode=Doppler@L1206; source=L1206;
+     station=Ir:    0 sec:  420 sec:   13.221 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   13.221 GB:   :       : 1;
+endscan;
+scan No0011;
+     start=2017y288d10h07m00s; mode=Doppler@L1287; source=L1287;
+     station=Ir:    0 sec:  420 sec:   14.904 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   14.904 GB:   :       : 1;
+endscan;
+scan No0012;
+     start=2017y288d10h16m00s; mode=Doppler@NGC281; source=NGC281;
+     station=Ir:    0 sec:  420 sec:   16.586 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   16.586 GB:   :       : 1;
+endscan;
+scan No0013;
+     start=2017y288d10h25m00s; mode=Doppler@S269; source=W75N;
+     station=Ir:    0 sec:  420 sec:   18.269 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   18.269 GB:   :       : 1;
+endscan;
+scan No0014;
+     start=2017y288d10h34m00s; mode=Doppler@W75S; source=W75S;
+     station=Ir:    0 sec:  420 sec:   19.952 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   19.952 GB:   :       : 1;
+endscan;
+scan No0015;
+     start=2017y288d10h43m00s; mode=Doppler@DR20; source=DR20;
+     station=Ir:    0 sec:  420 sec:   21.635 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   21.635 GB:   :       : 1;
+endscan;
+scan No0016;
+     start=2017y288d10h52m00s; mode=Doppler@DR21; source=DR21;
+     station=Ir:    0 sec:  420 sec:   23.317 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   23.317 GB:   :       : 1;
+endscan;
+scan No0017;
+     start=2017y288d10h59m50s; mode=Doppler@NGC7538; source=NGC7538;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Ir:    0 sec:  180 sec:   25.000 GB:   :       : 1;
+     station=Iq:    0 sec:  180 sec:   25.000 GB:   :       : 1;
+endscan;
+scan No0018;
+     start=2017y288d11h04m50s; mode=Doppler@CEPA; source=CEPA;
+     station=Ir:    0 sec:  180 sec:   25.721 GB:   :       : 1;
+     station=Iq:    0 sec:  180 sec:   25.721 GB:   :       : 1;
+endscan;
+scan No0019;
+     start=2017y288d11h09m50s; mode=Doppler@W3OH; source=W3OH;
+     station=Ir:    0 sec:   60 sec:   26.442 GB:   :       : 1;
+     station=Iq:    0 sec:   60 sec:   26.442 GB:   :       : 1;
+endscan;
+scan No0020;
+     start=2017y288d11h12m50s; mode=Doppler@G136P84; source=G136P84;
+     station=Ir:    0 sec:  420 sec:   26.683 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   26.683 GB:   :       : 1;
+endscan;
+scan No0021;
+     start=2017y288d11h21m50s; mode=Doppler@V645; source=V645;
+     station=Ir:    0 sec:  420 sec:   28.365 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   28.365 GB:   :       : 1;
+endscan;
+scan No0022;
+     start=2017y288d11h30m50s; mode=Doppler@G111P26; source=G111P26;
+     station=Ir:    0 sec:  420 sec:   30.048 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   30.048 GB:   :       : 1;
+endscan;
+scan No0023;
+     start=2017y288d11h39m50s; mode=Doppler@G90P92; source=G90P92;
+     station=Ir:    0 sec:  420 sec:   31.731 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   31.731 GB:   :       : 1;
+endscan;
+scan No0024;
+     start=2017y288d11h48m50s; mode=Doppler@G85P41; source=G85P41;
+     station=Ir:    0 sec:  420 sec:   33.413 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   33.413 GB:   :       : 1;
+endscan;
+scan No0025;
+     start=2017y288d11h57m50s; mode=Doppler@G78P122; source=G78P122;
+     station=Ir:    0 sec:  420 sec:   35.096 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   35.096 GB:   :       : 1;
+endscan;
+scan No0026;
+     start=2017y288d12h06m50s; mode=Doppler@G75P78; source=G75P78;
+     station=Ir:    0 sec:  420 sec:   36.779 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   36.779 GB:   :       : 1;
+endscan;
+scan No0027;
+     start=2017y288d12h15m50s; mode=Doppler@G73P06; source=G73P06;
+     station=Ir:    0 sec:  420 sec:   38.461 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   38.461 GB:   :       : 1;
+endscan;
+scan No0028;
+     start=2017y288d12h24m50s; mode=Doppler@G60P57; source=G60P57;
+     station=Ir:    0 sec:  420 sec:   40.144 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   40.144 GB:   :       : 1;
+endscan;
+scan No0029;
+     start=2017y288d12h33m50s; mode=Doppler@G59P783; source=G59P783;
+     station=Ir:    0 sec:  420 sec:   41.827 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   41.827 GB:   :       : 1;
+endscan;
+scan No0030;
+     start=2017y288d12h42m50s; mode=Doppler@G50P03; source=G50P03;
+     station=Ir:    0 sec:  420 sec:   43.510 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   43.510 GB:   :       : 1;
+endscan;
+scan No0031;
+     start=2017y288d12h51m50s; mode=Doppler@W51; source=W51;
+     station=Ir:    0 sec:  420 sec:   45.192 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   45.192 GB:   :       : 1;
+endscan;
+scan No0032;
+     start=2017y288d13h00m50s; mode=Doppler@W49N; source=W49N;
+     station=Ir:    0 sec:  420 sec:   46.875 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   46.875 GB:   :       : 1;
+endscan;
+scan No0033;
+     start=2017y288d13h09m50s; mode=Doppler@G49P04; source=G49P04;
+*              :data_good:data_stop:goto_foot: pass:  wrap :driv:tape at
+     station=Ir:    0 sec:  420 sec:   48.558 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   48.558 GB:   :       : 1;
+endscan;
+scan No0034;
+     start=2017y288d13h18m50s; mode=Doppler@G49P57; source=G49P57;
+     station=Ir:    0 sec:  420 sec:   50.240 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   50.240 GB:   :       : 1;
+endscan;
+scan No0035;
+     start=2017y288d13h27m50s; mode=Doppler@G37P479; source=G37P479;
+     station=Ir:    0 sec:  420 sec:   51.923 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   51.923 GB:   :       : 1;
+endscan;
+scan No0036;
+     start=2017y288d13h36m50s; mode=Doppler@G35P20; source=G35P20;
+     station=Ir:    0 sec:  420 sec:   53.606 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   53.606 GB:   :       : 1;
+endscan;
+scan No0037;
+     start=2017y288d13h45m50s; mode=Doppler@G33P64; source=G33P64;
+     station=Ir:    0 sec:  420 sec:   55.288 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   55.288 GB:   :       : 1;
+endscan;
+scan No0038;
+     start=2017y288d13h54m50s; mode=Doppler@G32P745; source=G32P745;
+     station=Ir:    0 sec:  420 sec:   56.971 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   56.971 GB:   :       : 1;
+endscan;
+scan No0039;
+     start=2017y288d14h03m50s; mode=Doppler@G30P99; source=G30P99;
+     station=Ir:    0 sec:  420 sec:   58.654 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   58.654 GB:   :       : 1;
+endscan;
+scan No0040;
+     start=2017y288d14h12m50s; mode=Doppler@G25P65; source=G25P65;
+     station=Ir:    0 sec:  420 sec:   60.336 GB:   :       : 1;
+     station=Iq:    0 sec:  420 sec:   60.336 GB:   :       : 1;
+endscan;
+
