@@ -1,0 +1,12 @@
+$THREADS;
+*
+def 08Threads01;
+*	Stations = Ib
+    format = VDIF : : 128;
+    thread = 0 : 1 : 1 : 128 : 4 : 2 : : : 8000;
+    channel =  &CH01 : 0:  0;
+    channel =  &CH02 : 0:  1;
+    channel =  &CH03 : 0:  2;
+    channel =  &CH04 : 0:  3;
+
+enddef;

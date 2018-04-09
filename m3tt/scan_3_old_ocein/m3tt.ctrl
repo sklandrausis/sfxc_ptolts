@@ -1,0 +1,91 @@
+{
+    "subbands": [
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6668520000, 
+            "sideband": "U", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6668520000, 
+            "sideband": "U", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6668520000, 
+            "sideband": "L", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6668520000, 
+            "sideband": "L", 
+            "polarisation": "L"
+        }
+    ], 
+    "output_file": "file://m3tt.cor", 
+    "stations": [
+        "Tr", 
+        "Ib"
+    ], 
+    "cross_polarize": true, 
+    "stop": "2018y087d14h46m20s", 
+    "channels": [
+        "CH01", 
+        "CH02", 
+        "CH03", 
+        "CH04"
+    ], 
+    "number_channels": 2048, 
+    "data_sources": {
+        "Ib": [
+            "file://data/m3tt_ib_no0003.m5a"
+        ], 
+        "Tr": [
+            "file://data/m3tt_tr_no0003.m5a"
+        ]
+    }, 
+    "exper_name": "m3tt", 
+    "html_output": "file://html", 
+    "message_level": 1, 
+    "site_position": {
+        "Ib": [
+            3183295.0, 
+            1276276.0, 
+            5359611.0
+        ], 
+        "Tr": [
+            3638558.51, 
+            1221969.72, 
+            5077036.76
+        ]
+    }, 
+    "integr_time": 2.0, 
+    "scans": [
+        [
+            "2018y087d14h30m00s", 
+            "2018y087d14h34m00s"
+        ], 
+        [
+            "2018y087d14h37m00s", 
+            "2018y087d14h41m00s"
+        ], 
+        [
+            "2018y087d14h44m00s", 
+            "2018y087d14h49m00s"
+        ], 
+        [
+            "2018y087d14h52m00s", 
+            "2018y087d14h56m00s"
+        ], 
+        [
+            "2018y087d14h59m00s", 
+            "2018y087d15h03m00s"
+        ]
+    ], 
+    "start": "2018y087d14h46m00s", 
+    "delay_directory": "file://delays", 
+    "reference_station": "Tr"
+}

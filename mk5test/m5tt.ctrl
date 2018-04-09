@@ -1,0 +1,71 @@
+{
+    "subbands": [
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665230000, 
+            "sideband": "U", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665230000, 
+            "sideband": "U", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665230000, 
+            "sideband": "L", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665230000, 
+            "sideband": "L", 
+            "polarisation": "L"
+        }
+    ], 
+    "output_file": "file://m5tt.cor", 
+    "stations": [
+        "Ib"
+    ], 
+    "cross_polarize": false, 
+    "stop": "2018y087d08h45m10s", 
+    "channels": [
+        "CH01"
+    ], 
+    "number_channels": 1024, 
+    "data_sources": {
+        "Ib": [
+            "file://data/m5tt_ib_no0001.m5a"
+        ], 
+        "Tr": [
+            "file://data/m5tt_tr_no0001.m5a"
+        ]
+    }, 
+    "exper_name": "m5tt", 
+    "html_output": "file://html", 
+    "message_level": 1, 
+    "site_position": {
+        "Ib": [
+            3183295.0, 
+            1276276.0, 
+            5359611.0
+        ], 
+        "Tr": [
+            3638558.51, 
+            1221969.72, 
+            5077036.76
+        ]
+    }, 
+    "integr_time": 1.0, 
+    "scans": [
+        [
+            "2018y087d08h45m00s", 
+            "2018y087d08h50m00s"
+        ]
+    ], 
+    "start": "2018y087d08h45m00s", 
+    "delay_directory": "file://delays", 
+    "reference_station": "Ib"
+}
