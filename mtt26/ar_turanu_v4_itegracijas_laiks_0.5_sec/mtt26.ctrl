@@ -1,0 +1,175 @@
+{
+    "subbands": [
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6662490000, 
+            "sideband": "L", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6662490000, 
+            "sideband": "L", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6662490000, 
+            "sideband": "U", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6662490000, 
+            "sideband": "U", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6663490000, 
+            "sideband": "L", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6663490000, 
+            "sideband": "L", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6663490000, 
+            "sideband": "U", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6663490000, 
+            "sideband": "U", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6664490000, 
+            "sideband": "L", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6664490000, 
+            "sideband": "L", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6664490000, 
+            "sideband": "U", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6664490000, 
+            "sideband": "U", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665490000, 
+            "sideband": "L", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665490000, 
+            "sideband": "L", 
+            "polarisation": "L"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665490000, 
+            "sideband": "U", 
+            "polarisation": "R"
+        }, 
+        {
+            "bandwidth": 8000000, 
+            "frequency": 6665490000, 
+            "sideband": "U", 
+            "polarisation": "L"
+        }
+    ], 
+    "output_file": "file://mtt26.cor", 
+    "stations": [
+        "Ib", 
+        "Tr"
+    ], 
+    "cross_polarize": true, 
+    "stop": "2018y116d08h09m02s", 
+    "channels": [
+        "CH01", 
+        "CH02", 
+        "CH03", 
+        "CH04", 
+        "CH05", 
+        "CH06", 
+        "CH07", 
+        "CH08", 
+        "CH09", 
+        "CH10", 
+        "CH11", 
+        "CH12", 
+        "CH13", 
+        "CH14", 
+        "CH15", 
+        "CH16"
+    ], 
+    "number_channels": 1024, 
+    "data_sources": {
+        "Ib": [
+            "file://data/mtt26_ib_no0002.m5a"
+        ], 
+        "Tr": [
+            "file://data/mtt26_tr_no0002.m5a"
+        ]
+    }, 
+    "exper_name": "mtt26", 
+    "html_output": "file://html", 
+    "message_level": 1, 
+    "site_position": {
+        "Ib": [
+            3183295.0, 
+            1276276.0, 
+            5359611.0
+        ], 
+        "Tr": [
+            3638558.51, 
+            1221969.72, 
+            5077036.76
+        ]
+    }, 
+    "integr_time": 0.5, 
+    "scans": [
+        [
+            "2018y116d08h00m00s", 
+            "2018y116d08h04m00s"
+        ], 
+        [
+            "2018y116d08h08m00s", 
+            "2018y116d08h12m00s"
+        ], 
+        [
+            "2018y116d08h14m00s", 
+            "2018y116d08h18m00s"
+        ], 
+        [
+            "2018y116d08h19m00s", 
+            "2018y116d08h23m00s"
+        ], 
+        [
+            "2018y116d08h26m00s", 
+            "2018y116d08h30m00s"
+        ]
+    ], 
+    "start": "2018y116d08h09m00s", 
+    "delay_directory": "file://delays", 
+    "reference_station": "Tr"
+}
