@@ -520,4 +520,3 @@ def EOP115;
      y_wobble = 0.432133 asec : 0.433384 asec : 0.434385 asec;
      ut1-utc = 0.1100755 sec : 0.1086377 sec : 0.1071300 sec;
 enddef;
-ÿ
