@@ -890,4 +890,3 @@ def EOP86;
      y_wobble = 0.386430 asec : 0.387481 asec : 0.388599 asec;
      ut1-utc = 0.1404135 sec : 0.1393378 sec : 0.1381249 sec;
 enddef;
-ÿ
